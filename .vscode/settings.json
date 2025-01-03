@@ -1,0 +1,6 @@
+{
+    "conventionalCommits.scopes": [
+        "general",
+        "game"
+    ]
+}
