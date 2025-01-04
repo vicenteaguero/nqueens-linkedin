@@ -2,75 +2,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>N-Queens</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --square-size: 30px;
-        }
-
-        table.board {
-            user-select: none;
-            -moz-user-select: none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            -o-user-select: none;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-
-        td.board {
-            margin: 0;
-            padding: 0;
-            border: 1px solid #000;
-            width: var(--square-size);
-            height: var(--square-size);
-            text-align: center;
-            vertical-align: middle;
-            font-size: 0;
-            line-height: 1;
-            box-sizing: border-box;
-        }
-
-        td.board[data-state="x"] {
-            font-size: 8px;
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/board.css" />
     <script src="assets/js/solutions.js"></script>
     <script src="assets/js/generate.js"></script>
     <script src="assets/js/board.js"></script>
     <script src="assets/js/game.js"></script>
-</head>
-<body class="bg-gray-50 font-sans antialiased px-10">
-    <div class="container mx-auto py-10">
-        <h1 class="text-4xl font-bold text-center mb-6">N-Queens</h1>
-        <div class="flex justify-center items-center mb-8">
-            <input 
-                type="number" 
-                id="n-value" 
-                min="4" 
-                max="100" 
-                value="4" 
-                class="border border-gray-300 rounded-md px-4 py-2 w-20 text-center shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-            <button 
-                id="generate-button" 
-                class="ml-4 bg-blue-500 text-white px-6 py-2 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-                Generate
-            </button>
-        </div>
-        <h2 class="text-2xl font-semibold text-center mb-4">Board</h2>
-        <h3 id="solved" class="text-center text-lg text-gray-700 mb-6"></h3>
-        <div id="board-output" class="text-center">
-            <table class="board">
-                <!-- Board cells will be dynamically inserted here -->
-            </table>
-        </div>
+  </head>
+  <body class="base-body">
+    <div class="container">
+      <h1 class="heading-primary">N-Queens</h1>
+      <!-- Instructions -->
+      <div class="alert">
+        <p class="alert-title">Instructions</p>
+        <p class="alert-text">
+          The N-Queens problem is a classic problem in computer science. The
+          objective is to place N queens on an N x N chessboard in such a way
+          that no two queens are attacking each other. Also, there is no other
+          queens in the surrounding squares of each queen.
+        </p>
+        <p class="alert-text">
+          To play, select the size of the board and click the "Generate" button.
+        </p>
+      </div>
+      <div class="form-group">
+        <input
+          type="number"
+          id="n-value"
+          min="4"
+          max="100"
+          value="4"
+          class="input-number"
+        />
+        <button id="generate-button" class="btn-primary">Generate</button>
+      </div>
+      <h2 class="heading-secondary">Board</h2>
+      <div id="board-output" class="board-container">
+        <table class="board"></table>
+      </div>
+      <h3 id="solved" class="board-status"></h3>
     </div>
-</body>
+  </body>
 </html>
