@@ -1,5 +1,7 @@
+/* assets/css/board.css */
+
 :root {
-    --square-size: 30px;
+    --square-size: 50px;
 }
 
 table.board {
@@ -8,25 +10,30 @@ table.board {
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+    margin: 0 auto;
+    border-collapse: collapse;
 }
 
 td.board {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     border: 1px solid #000;
     width: var(--square-size);
     height: var(--square-size);
     text-align: center;
     vertical-align: middle;
-    font-size: 0px;
+    font-size: 0;
     line-height: 1;
     box-sizing: border-box;
 }
 
+/* tiny change: sets font-size for 'x' state */
 td.board[data-state="x"] {
     font-size: 8px;
 }
 
-/* td.board[data-state="crown"] {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-} */
+td.board svg {
+    margin: auto;
+    padding: 0;
+    border: 0;
+}
