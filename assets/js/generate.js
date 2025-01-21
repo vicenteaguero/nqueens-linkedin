@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generate_button.addEventListener('click', async function() {
 
+        var solved = document.getElementById('solved');
+        solved.textContent = '';
+
         var input = document.getElementById('n-value');
         var n = parseInt(input.value);
 
