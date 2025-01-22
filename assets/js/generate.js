@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // var solution = transforms[index];
 
         var board = get_board(solution);
-        refineBoard(board);
+        refineBoard(board, solution);
         
         solutions = [];
 

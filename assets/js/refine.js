@@ -64,7 +64,8 @@ function shuffle(array) {
     }
 }
 
-function refineBoard(board) {
+function refineBoard(board, solution) {
+    console.log(solution);
     const n = board.length;
     const pairs = [];
 
@@ -77,6 +78,10 @@ function refineBoard(board) {
     shuffle(pairs);
 
     for (const [i, j] of pairs) {
+
+        // Skip if the cell is already filled
+        if (solution[i][j] === 1) continue;
+
         const oldVal = board[i][j];
 
         // Get frequencies of colors in the cross
