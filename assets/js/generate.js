@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         board_output.appendChild(table);
+        applyBorders(board);
 
     });
 
