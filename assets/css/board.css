@@ -37,3 +37,19 @@ td.board svg {
     padding: 0;
     border: 0;
 }
+
+.blocked-cells {
+    z-index: 9;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(203, 17, 45, 1) 0,
+        rgba(203, 17, 45, 1) 3px,
+        transparent 0px,
+        transparent 18px
+    );
+}
+
+.blocked-cells .crown-path {
+    z-index: 10;
+    fill: rgba(203, 17, 45, 1);
+}
