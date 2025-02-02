@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 || e.target.tagName == 'path'
                 || e.target.tagName == 'svg'
                 || e.target.tagName == 'g'
+                || e.target.tagName == 'IMG'
             )
             && e.target.classList.contains('board')
         ) {
