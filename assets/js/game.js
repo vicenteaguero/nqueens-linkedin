@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
             )
             && e.target.classList.contains('board')
         ) {
-            toggleSquare(e.target);
+            if (e.target.tagName == 'IMG') {
+                toggleSquare(e.target.parentElement);
+            } else {
+                toggleSquare(e.target);
+            }
         }
     });
 
@@ -45,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function () {
         ) {
             td = td.closest('td');
         }
-
-
+        
         if (!td.dataset.state || td.dataset.state === 'empty') {
             td.dataset.state = 'x';
+            td.innerHTML = '';
             td.textContent = '✖️';
         } else if (td.dataset.state === 'x') {
             td.dataset.state = 'crown';
